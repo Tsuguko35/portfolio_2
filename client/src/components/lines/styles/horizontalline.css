@@ -1,0 +1,10 @@
+.custom-hr {
+  position: relative;
+  padding: 50px 0;
+  border: none;
+  border-top: 1px solid #333; /* The main line */
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+

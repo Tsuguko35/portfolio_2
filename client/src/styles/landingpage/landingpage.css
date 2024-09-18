@@ -1,0 +1,222 @@
+.landing__page{
+  overflow-x: hidden;
+}
+
+/* Hero Background */
+.landing__page .landing__page__hero__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.landing__page .landing__page__hero__background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0) 40%,
+      rgba(0, 0, 0, 0.8) 100%
+    ),
+    rgba(0, 0, 0, 0.7);
+  z-index: 0;
+}
+
+.landing__page .landing__page__hero__background > video {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  z-index: -1;
+}
+
+.video-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 1s ease; /* Transition for fade effect */
+  z-index: 1; /* Ensure the videos are layered */
+}
+
+.fading-out {
+  opacity: 0; /* Fade out the current video */
+}
+
+.fading-in {
+  opacity: 1; /* Fade in the next video */
+}
+
+.visible {
+  opacity: 1; /* Keep the current video visible */
+}
+
+.hidden {
+  opacity: 0; /* Keep the next video hidden until fade starts */
+}
+
+/* Landing Page Hero  */
+.landing__page .landing__page__hero{
+  padding-top: 30dvh;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.landing__page .landing__page__hero > .landing__page__baseline{
+  display: flex;
+  width: 100%;
+  gap: 15rem;
+}
+
+.landing__page .landing__page__hero > .landing__page__baseline > .landing__page__baseline__labels{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.landing__page .landing__page__hero > .landing__page__baseline > .landing__page__baseline__labels > .word{
+  display: inline-block;
+}
+
+.landing__page .landing__page__hero > .landing__page__baseline > .landing__page__baseline__labels > .word > .letter{
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--text-color-4);
+}
+
+
+.landing__page .landing__page__hero > .landing__page__h1 > .landing__page__name,
+.landing__page .landing__page__hero > .landing__page__h1 > .landing__page__position {
+  line-height: 1;
+  width: min(100%, 750px);
+}
+
+.landing__page .landing__page__hero > .landing__page__h1 > .landing__page__position {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.landing__page .landing__page__hero > .landing__page__h1 > .landing__page__name > span {
+  font-weight: 100;
+  font-size: 5rem;
+  line-height: 1;
+  color: var(--text-color-1);
+  text-transform: uppercase;
+}
+
+.landing__page .landing__page__hero > .landing__page__h1 > .landing__page__position > span {
+  font-weight: 500;
+  font-size: 5rem;
+  line-height: 1;
+  color: var(--text-color-1);
+  text-transform: uppercase;
+}
+
+/* Landing Page Socials  */
+.landing__page .landing__page__hero > .landing__page__socials{
+  width: min(100%, 200px);
+  margin: 0 auto;
+  display: flex;
+  padding: 30px 20px;
+  justify-content: center;
+  gap: 10rem;
+}
+
+.landing__page .landing__page__hero > .landing__page__socials > a{
+  flex: 1;
+  color: var(--text-color-1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  .landing__page {
+    padding-inline: 100px;
+  }
+
+  .landing__page .landing__page__hero > .landing__page__h1 > .landing__page__name,
+  .landing__page .landing__page__hero > .landing__page__h1 > .landing__page__position {
+  width: min(100%, 550px);
+  }
+
+  .landing__page .landing__page__hero > .landing__page__h1 > .landing__page__name > span {
+    font-size: 4rem;
+  }
+  
+  .landing__page .landing__page__hero > .landing__page__h1 > .landing__page__position > span {
+    font-size: 4rem;
+
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .landing__page {
+    padding-inline: 50px;
+  }
+
+  .landing__page .landing__page__hero > .landing__page__h1 > .landing__page__name,
+  .landing__page .landing__page__hero > .landing__page__h1 > .landing__page__position {
+  width: min(100%, 400px);
+  }
+
+  .landing__page .landing__page__hero > .landing__page__h1 > .landing__page__name > span {
+    font-size: 3rem;
+  }
+  
+  .landing__page .landing__page__hero > .landing__page__h1 > .landing__page__position > span {
+    font-size: 3rem;
+
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .landing__page {
+    padding-inline: 20px;
+  }
+
+  .landing__page .landing__page__hero > .landing__page__baseline > .landing__page__baseline__labels > .word > .letter{
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .landing__page .landing__page__hero > .landing__page__h1 > .landing__page__name,
+  .landing__page .landing__page__hero > .landing__page__h1 > .landing__page__position {
+  width: min(100%, 3 00px);
+  }
+
+  .landing__page .landing__page__hero > .landing__page__socials {
+    gap: 6rem;
+  }
+}
+
+@media only screen and (max-width: 374px) {
+  .landing__page .landing__page__hero > .landing__page__h1 > .landing__page__name > span {
+    font-size: 2.5rem;
+  }
+  
+  .landing__page .landing__page__hero > .landing__page__h1 > .landing__page__position > span {
+    font-size: 2.5rem;
+
+  }
+}

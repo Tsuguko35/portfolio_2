@@ -1,0 +1,186 @@
+:root {
+  --background-color-1: #161616;
+  --background-color-2: #1b1b1b;
+  --background-color-3: #4a4a4a;
+  --text-color-1: #ffffff;
+  --text-color-2: #cccccc;
+  --text-color-3: #6b6b6c;
+  --text-color-4: #919191;
+}
+
+/* Global */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: var(--text);
+  font-family: "Chivo", sans-serif;
+  scrollbar-width: none;
+  scrollbar-color: var(--background-color-3) var(--background-color-2);
+}
+
+::selection{
+  background: var(--background-color-3);
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+textarea,
+button,
+select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--background-color-1);
+  min-height: 100vh;
+  font-family: "PPNeueMontreal", sans-serif;
+}
+
+input[type="checkbox"] {
+  accent-color: var(--text);
+}
+
+/* Remove arrows in Firefox */
+input[type="number"] {
+  appearance: textfield;
+}
+
+/* Remove arrows in Chrome, Safari, and Edge */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+/* Remove arrows in Internet Explorer 10+ */
+input[type="number"] {
+  appearance: textfield;
+}
+
+.PPEiko {
+  font-family: "PPEiko";
+}
+
+.PPNeueMontreal {
+  font-family: "PPNeueMontreal";
+}
+
+.download{
+  padding: 10px 30px;
+  border: 1px solid var(--background-color-3);
+  border-radius: 5px;
+  color: var(--text-color-1);
+  font-size: 0.875rem;
+}
+
+.wrapper{
+  width: min(100%, 1560px);
+  height: 100%;
+  padding-inline: 150px;
+  margin: 0 auto;
+}
+
+@keyframes flickerLight {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.3;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  15% {
+    opacity: 0.2;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  30% {
+    opacity: 0.4;
+  }
+  40% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  60% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  80% {
+    opacity: 0.95;
+  }
+  90% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.light__on {
+  opacity: 0;
+  animation: flickerLight 1s cubic-bezier(.79,-0.01,0,1.01) forwards;
+}
+
+main{
+  animation: mainAnim 2s cubic-bezier(.79,-0.01,0,1.01) forwards;
+}
+
+@keyframes mainAnim{
+  0%{
+    transform: scale(1.1);
+    opacity: 0;
+  }
+  100%{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  html {
+    font-size: 14px;
+  }
+
+  .wrapper{
+    padding-inline: 100px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    padding-inline: 50px;
+  }
+
+}
+
+@media only screen and (max-width: 767px) {
+  .wrapper {
+    padding-inline: 20px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  html {
+    font-size: 12px;
+  }
+}

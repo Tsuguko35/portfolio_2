@@ -1,0 +1,34 @@
+.navbar__slide{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: -100%;
+    background-color: var(--background-color-2);
+    z-index: 500;
+}
+
+.navbar__slide.open{
+    animation: openSlide 1s cubic-bezier(.55,-0.01,0,1.01) forwards;
+}
+
+.navbar__slide.close{
+    animation: closeSlide 1s cubic-bezier(.55,-0.01,0,1.01) forwards;
+}
+
+@keyframes openSlide{
+    0%{
+        top: -100%;
+    }
+    100%{
+        top: 0
+    }
+}
+
+@keyframes closeSlide{
+    0%{
+        top: 0;
+    }
+    100%{
+        top: 100%;
+    }
+}

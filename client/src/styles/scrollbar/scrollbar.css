@@ -1,0 +1,34 @@
+/* Scrollbar container */
+.scrollbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 7px;
+    height: 100%;
+    z-index: 998;
+    opacity: 1  ;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none; /* Prevent blocking other content */
+  }
+  
+  /* Show scrollbar when scrolling */
+  .scrollbar.hide {
+    opacity: 0;
+  }
+  
+  /* Scrollbar track */
+  .track {
+    width: 100%;
+    height: 100%;
+    background: var(--background-color-2); /* Track color */
+    position: relative;
+  }
+  
+  /* Scrollbar thumb */
+  .thumb {
+    position: absolute;
+    width: 100%;
+    background: var(--background-color-3); /* Thumb color */
+    transition: background-color 0.3s ease;
+  }
+  

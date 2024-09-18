@@ -1,0 +1,62 @@
+@font-face {
+  font-family: "PPEiko";
+  src: url("../assets/fonts/PPEiko-Thin.otf") format("opentype");
+  font-weight: 100; /* Thin */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PPEiko";
+  src: url("../assets/fonts/PPEiko-Medium.otf") format("opentype");
+  font-weight: 500; /* Medium */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PPEiko";
+  src: url("../assets/fonts/PPEiko-Heavy.otf") format("opentype");
+  font-weight: 800; /* Heavy */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PPNeueMontreal";
+  src: url("../assets/fonts/ppneuemontreal-thin.woff") format("woff");
+  font-weight: 100; /* Thin */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PPNeueMontreal";
+  src: url("../assets/fonts/ppneuemontreal-book.woff") format("woff");
+  font-weight: 400; /* Book */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PPNeueMontreal";
+  src: url("../assets/fonts/ppneuemontreal-medium.woff") format("woff");
+  font-weight: 500; /* Medium */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PPNeueMontreal";
+  src: url("../assets/fonts/ppneuemontreal-bold.woff") format("woff");
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PPNeueMontreal";
+  src: url("../assets/fonts/ppneuemontreal-italic.woff") format("woff");
+  font-weight: 400; /* Regular Italic */
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "PPNeueMontreal";
+  src: url("../assets/fonts/ppneuemontreal-semibolditalic.woff") format("woff");
+  font-weight: 600; /* Semi-bold Italic */
+  font-style: italic;
+}

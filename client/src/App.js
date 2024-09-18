@@ -1,24 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import "./styles/styles.css";
+import "./styles/fontface.css";
+import { Routes, Route } from "react-router-dom";
+import { routes } from "./config";
+import { Navbar, Preloader, Scrollbar } from "./components";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [isMainVisible, setIsMainVisible] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+
+    const timeout = setTimeout(() => {
+      setIsMainVisible(true);
+    }, 2500);
+
+    const timeout2 = setTimeout(() => {
+      document.body.style.overflow = "auto";
+    }, 4300);
+
+    return () => {
+      clearTimeout(timeout);
+      clearTimeout(timeout2);
+    };
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* Preloader  */}
+      <Preloader />
+
+      {/* Navbar  */}
+      {isMainVisible && <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />}
+
+      {/* Scrollbar */}
+      {isMainVisible && <Scrollbar isOpen={isOpen} />}
+
+      {/* Main  */}
+      {isMainVisible && (
+        <main>
+          <Routes>
+            {routes.map((route) => (
+              <Route
+                exact
+                key={route.path}
+                path={route.path}
+                element={route.component}
+              />
+            ))}
+          </Routes>
+        </main>
+      )}
+    </>
   );
 }
 
