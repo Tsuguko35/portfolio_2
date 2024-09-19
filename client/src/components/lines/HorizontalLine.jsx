@@ -2,7 +2,7 @@ import React from "react";
 import "./styles/horizontalline.css";
 
 function HorizontalLine() {
-  return <hr className="custom-hr" />;
+  return <div className="custom__divider"></div>;
 }
 
 export default HorizontalLine;

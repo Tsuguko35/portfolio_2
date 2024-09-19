@@ -19,7 +19,7 @@ function NavbarSlide({ isOpen }) {
     },
     {
       text: "Projects",
-      path: "/",
+      path: "/projects",
     },
     {
       text: "About",
