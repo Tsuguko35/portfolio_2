@@ -2,7 +2,7 @@ import "./styles/styles.css";
 import "./styles/fontface.css";
 import { Routes, Route } from "react-router-dom";
 import { routes } from "./config";
-import { Navbar, Preloader, Scrollbar } from "./components";
+import { CursorFollower, Navbar, Preloader, Scrollbar } from "./components";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -30,8 +30,15 @@ function App() {
       {/* Preloader  */}
       <Preloader />
 
+      {/* Scrollbar */}
+      {isMainVisible && <CursorFollower />}
+
       {/* Navbar  */}
-      {isMainVisible && <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />}
+      <Navbar
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        isMainVisible={isMainVisible}
+      />
 
       {/* Scrollbar */}
       {isMainVisible && <Scrollbar isOpen={isOpen} />}

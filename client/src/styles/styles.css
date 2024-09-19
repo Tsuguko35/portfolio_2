@@ -33,6 +33,10 @@ video {
   max-width: 100%;
 }
 
+ul, li{
+  list-style: none;
+}
+
 input,
 textarea,
 button,
@@ -71,6 +75,10 @@ input[type="number"] {
   appearance: textfield;
 }
 
+.cursor__default{
+  cursor: default;
+}
+
 .PPEiko {
   font-family: "PPEiko";
 }
@@ -80,11 +88,18 @@ input[type="number"] {
 }
 
 .download{
+  display: block;
   padding: 10px 30px;
   border: 1px solid var(--background-color-3);
   border-radius: 5px;
   color: var(--text-color-1);
   font-size: 0.875rem;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.download:hover{
+  color: var(--background-color-1);
+  background-color: var(--text-color-1);
 }
 
 .wrapper{
@@ -93,6 +108,7 @@ input[type="number"] {
   padding-inline: 150px;
   margin: 0 auto;
 }
+
 
 @keyframes flickerLight {
   0% {

@@ -82,7 +82,7 @@ function Landing__Hero() {
         <section className="landing__page__hero">
           <div className="landing__page__baseline">
             <div className="landing__page__baseline__labels">
-              <div className="word">
+              <div className="word cursor__default">
                 {label__1.split("").map((letter, index) => (
                   <HackerEffect
                     key={index} // Ensure unique key for each letter
@@ -93,7 +93,7 @@ function Landing__Hero() {
                   />
                 ))}
               </div>
-              <div className="word">
+              <div className="word cursor__default">
                 {label__2.split("").map((letter, index) => (
                   <HackerEffect
                     key={index} // Ensure unique key for each letter
@@ -107,7 +107,7 @@ function Landing__Hero() {
             </div>
           </div>
           <div className="landing__page__h1">
-            <div className="landing__page__name">
+            <div className="landing__page__name cursor__interact cursor__default">
               {name.split("").map((letter, index) => (
                 <HackerEffect
                   key={index} // Ensure unique key for each letter
@@ -118,7 +118,7 @@ function Landing__Hero() {
                 />
               ))}
             </div>
-            <div className="landing__page__position">
+            <div className="landing__page__position cursor__interact cursor__default">
               {postition.split("").map((letter, index) => (
                 <HackerEffect
                   key={index} // Ensure unique key for each letter
