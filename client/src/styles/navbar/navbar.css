@@ -1,0 +1,121 @@
+.navbar{
+    width: 100%;
+    height: fit-content;
+    position: fixed;
+    z-index: 500;
+}
+
+.navbar > .nav__container{
+    width: min(100%, 1560px);
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Nav TItle  */
+
+.navbar > .nav__container > .title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.navbar > .nav__container > .title > span{
+    color: var(--text-color-2);
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 1.025rem;
+}
+
+/* Nav Logo  */
+.navbar > .nav__container > .logo__container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+
+.navbar > .nav__container > .logo__container > a{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar > .nav__container > .logo__container > a > img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* Nav Items  */
+.navbar > .nav__container > .nav__items{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
+}
+
+.navbar > .nav__container > .nav__items > .hamburger__button{
+    position: relative;
+    width: 40px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 501;
+}
+
+.navbar > .nav__container > .nav__items > .hamburger__button > span{
+    display: block;
+    position: absolute;
+    content: '';
+    width: 40px;
+    height: 2px;
+    background: var(--text-color-1);
+    border-radius: 5px;
+    transition: all 0.3s cubic-bezier(.42,-0.01,0,.99);
+}
+
+.navbar > .nav__container > .nav__items > .hamburger__button > span:nth-child(1) {
+    transform: translateY(-5px);
+}
+  
+.navbar > .nav__container > .nav__items > .hamburger__button > span:nth-child(2) {
+    transform: translateY(5px);
+}
+
+.navbar.open > .nav__container > .nav__items > .hamburger__button > span:nth-child(1) {
+    transform: translateY(0px) rotate(45deg);
+}
+  
+.navbar.open > .nav__container > .nav__items > .hamburger__button > span:nth-child(2) {
+    transform: translateY(0px) rotate(-45deg);
+}
+
+
+
+@media only screen and (max-width: 767px){
+    .navbar > .nav__container{
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .navbar > .nav__container > .title {
+        display: none;
+    }
+
+    .navbar > .nav__container > .nav__items > .download{
+        display: none;
+    }
+
+    .navbar > .nav__container > .logo__container{
+        justify-content: flex-start;
+    }
+}

@@ -1,0 +1,68 @@
+.preloader{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background-color: var(--background-color-1);
+    z-index: 600;
+    animation: exit 0.5s cubic-bezier(.79,-0.01,0,1.01) forwards 2.5s;
+}
+
+.preloader .preloader__container{
+    width: min(100%, 1080px);
+    height: 100%;
+    margin: 0 auto;
+    padding-inline: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: all;
+    animation: exit 1s cubic-bezier(.79,-0.01,0,1.01) forwards 1.5s;
+}
+
+.preloader .preloader__container > img{
+    width: 200px;
+    height: 200px;
+}
+
+.preloader .preloader__container >  .counter{
+    color: var(--text-color-3);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+@keyframes exit {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+@media only screen and (max-width: 1024px){
+    .preloader .preloader__container > img{
+        width: 150px;
+        height: 150px;
+    }
+
+    .preloader .preloader__container{
+        width: min(100%, 768px);
+
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .preloader .preloader__container > img{
+        width: 100px;
+        height: 100px;
+    }
+
+    .preloader .preloader__container{
+        width: min(100%, 425px);
+
+    }
+}
