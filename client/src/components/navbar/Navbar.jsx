@@ -1,13 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../../styles/navbar/navbar.css";
 import logoImg from "../../assets/images/logo_transparent.png";
 import NavbarSlide from "./NavbarSlide";
 import HackerEffect from "../animations/HackerEffect";
 
 function Navbar({ isOpen, setIsOpen, isMainVisible }) {
+  const [isMini, setIsMini] = useState(false); // State to track whether the user is at the top
   const title = "— jazpher carpio";
+
+  // Effect to check scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsMini(true);
+      } else {
+        setIsMini(false);
+      }
+    };
+
+    // Add scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className={`navbar ${isOpen ? "open" : ""}`}>
+    <header
+      className={`navbar ${isOpen ? "open" : ""} ${isMini ? "mini" : ""}`}
+    >
       {/* Nav Text  */}
       <div className="nav__container">
         {isMainVisible && (
@@ -36,7 +59,7 @@ function Navbar({ isOpen, setIsOpen, isMainVisible }) {
         </div>
 
         {/* Nav Items  */}
-        <div className="nav__items ">
+        <div className="nav__items">
           {/* Resume Download  */}
           <a
             href="/"

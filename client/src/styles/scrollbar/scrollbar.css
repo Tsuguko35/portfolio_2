@@ -5,7 +5,7 @@
   right: 0;
   width: 5px;
   height: 100%;
-  z-index: 998;
+  z-index: 499;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
   pointer-events: none; /* Prevent blocking other content */

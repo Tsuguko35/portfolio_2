@@ -1,15 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../styles/projectspage/projectspage.css";
 import projects_array from "./components/projects";
 import { HackerEffect, HorizontalLine } from "../../components";
+import ProjectImages from "./components/ProjectImages";
 
 function ProjectsPage() {
+  const [image, setImage] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(null);
+
+  const projectHover = (image, index) => {
+    setImage(image);
+    setCurrentIndex(index);
+  };
   return (
     <div className="projects__page wrapper">
       <ul className="projects__list">
         {projects_array.map((project, index) => (
           <>
-            <li>
+            <li onMouseEnter={() => projectHover(project.thumbnail, index)}>
               <a
                 href=""
                 title={`Explore ${project.name}`}
@@ -38,6 +46,8 @@ function ProjectsPage() {
             {projects_array.length !== index + 1 && <HorizontalLine />}
           </>
         ))}
+
+        {image && <ProjectImages imageSrc={image} index={currentIndex} />}
       </ul>
     </div>
   );
