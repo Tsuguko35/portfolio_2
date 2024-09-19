@@ -1,10 +1,31 @@
-.custom-hr {
+.custom__divider {
   position: relative;
-  padding: 50px 0;
-  border: none;
-  border-top: 1px solid #333; /* The main line */
-  position: relative;
-  width: 100%;
+  margin: 0 auto;
+  padding-inline: 20px;
+  width: min(100%, 1560px);
+  height: 1px;
+  background-color: var(--background-color-3);
   z-index: 1;
 }
 
+.custom__divider::before,
+.custom__divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 8px 6px 0; /* Creates a triangle */
+  border-color: transparent var(--background-color-3) transparent transparent;
+  transform: translateY(-50%);
+}
+
+.custom__divider::before {
+  left: 0; /* Position the triangle on the left */
+  transform: translateY(-50%) rotate(180deg); /* Flip the triangle for the left side */
+}
+
+.custom__divider::after {
+  right: 0; /* Position the triangle on the right */
+}

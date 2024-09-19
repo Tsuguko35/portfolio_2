@@ -197,6 +197,10 @@
   .landing__page .landing__page__hero > .landing__page__baseline > .landing__page__baseline__labels > .word > .letter{
     font-size: 0.8rem;
   }
+
+  .landing__page .landing__page__hero > .landing__page__socials {
+    gap: 6rem;
+  }
 }
 
 @media only screen and (max-width: 425px) {
@@ -217,6 +221,5 @@
   
   .landing__page .landing__page__hero > .landing__page__h1 > .landing__page__position > span {
     font-size: 2.5rem;
-
   }
 }

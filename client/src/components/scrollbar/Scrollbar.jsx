@@ -1,12 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../../styles/scrollbar/scrollbar.css";
 
-function Scrollbar({ isOpen }) {
+function Scrollbar() {
+  const [isScrolling, setIsScrolling] = useState(false);
   const [thumbHeight, setThumbHeight] = useState(0);
   const [thumbPosition, setThumbPosition] = useState(0);
   const scrollTimeoutRef = useRef(null);
 
   const handleScroll = () => {
+    // Show scrollbar when scrolling
+    setIsScrolling(true);
+
     // Clear previous timeout if any
     if (scrollTimeoutRef.current) {
       clearTimeout(scrollTimeoutRef.current);
@@ -26,6 +30,11 @@ function Scrollbar({ isOpen }) {
 
     setThumbHeight(newThumbHeight);
     setThumbPosition(newThumbPosition);
+
+    // Hide scrollbar after 1.5 seconds of no scrolling
+    scrollTimeoutRef.current = setTimeout(() => {
+      setIsScrolling(false);
+    }, 1500);
   };
 
   useEffect(() => {
@@ -43,7 +52,7 @@ function Scrollbar({ isOpen }) {
   }, []);
 
   return (
-    <div className={`scrollbar ${isOpen ? "hide" : ""}`}>
+    <div className={`scrollbar ${isScrolling ? "visible" : ""}`}>
       <div className="track">
         <div
           className="thumb"

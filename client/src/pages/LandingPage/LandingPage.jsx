@@ -8,9 +8,6 @@ function LandingPage() {
     <div className="landing__page">
       {/* Hero */}
       <LandingHero />
-
-      {/* Line  */}
-      <HorizontalLine />
     </div>
   );
 }

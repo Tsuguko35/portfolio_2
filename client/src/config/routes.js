@@ -1,13 +1,14 @@
 import React from "react";
-
-const LandingPage = React.lazy(() =>
-  import("../pages/LandingPage/LandingPage")
-);
+import { LandingPage, ProjectsPage } from "../pages";
 
 const routes = [
   {
     path: "/",
     component: <LandingPage />,
+  },
+  {
+    path: "/projects",
+    component: <ProjectsPage />,
   },
   {
     path: "*",
