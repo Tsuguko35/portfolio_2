@@ -1,0 +1,113 @@
+.project__overview__page{
+    padding-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 100vh;
+}
+
+.project__overview__page .wrapper{
+    padding-inline: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.project__overview__page .back__button{
+    text-transform: uppercase;
+    color: var(--text-color-3);
+    display: flex;
+    align-items: center;
+    font-size: 0.68rem;
+    letter-spacing: 1px;
+    transition: color 0.3s ease-in-out;
+}
+
+.project__overview__page .back__button:hover{
+    color: var(--text-color-4);
+}
+
+.project__overview__page .project__label{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 10px 100px;
+}
+
+.project__overview__page .project__label .project__title{
+    position: relative;
+    font-weight: 100;
+    text-align: start;
+    font-size: 3rem;
+    color: var(--text-color-1);
+    text-transform: uppercase;
+    line-height: 1rem;
+    transition: text-shadow 0.3s ease-in-out;
+}
+
+.project__overview__page .project__label > .project__count{
+    position: relative;
+    font-weight: 100;
+    text-align: start;
+    font-size: 0.68rem;
+    color: var(--text-color-4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1rem;
+}
+
+.project__overview__page .project__label > .project__count > a:hover{
+    text-decoration: underline;
+}
+
+.project__overview__page .project__description{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+.project__overview__page .project__description > p{
+    width: min(100%, 1270px);
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--text-color-4);
+    line-height: 1.5rem;
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+
+@media only screen and (max-width: 1024px){
+    .project__overview__page .project__label{
+        padding: 10px 0px;
+        gap: 1.5rem;
+    }
+
+    .project__overview__page .project__label .project__title{
+        font-size: 2rem;
+    }
+
+    .project__overview__page .project__description > p{
+        width: min(100%, 870px);
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .project__overview__page .project__label .project__title{
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 425px){
+    .project__overview__page .project__label .project__title{
+        font-size: 1.3rem;
+    }
+}
+
+@media only screen and (max-width: 375px){
+    .project__overview__page .project__label .project__title{
+        font-size: 1.1rem;
+    }
+}

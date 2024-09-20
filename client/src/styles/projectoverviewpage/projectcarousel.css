@@ -1,0 +1,37 @@
+.project__carousel{
+    width: 100%;
+}
+
+.project__carousel .swiper {
+    width: 100%;
+    height: min(100%, 100px);
+    display: flex;
+    position: relative; /* Required for the pseudo-element */
+}
+  
+.project__carousel .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 400px;
+    height: 300px;
+    background-color: var(--text-color-1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 4/3;
+}
+
+.project__carousel .swiper-slide img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    transition: filter 0.3s ease-in-out;
+}
+
+/* .project__carousel .swiper-slide:not(.swiper-slide-active) img{
+    filter: grayscale(1);
+} */
+
+

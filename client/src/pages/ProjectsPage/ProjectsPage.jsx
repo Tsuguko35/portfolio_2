@@ -19,12 +19,12 @@ function ProjectsPage() {
           <>
             <li onMouseEnter={() => projectHover(project.thumbnail, index)}>
               <a
-                href=""
+                href={`/projects/${project.url_name}`}
                 title={`Explore ${project.name}`}
                 data-text={project.name}
               >
                 <span className="project__number PPNeueMontreal">
-                  PROJECT /{index < 10 ? "0" : ""}
+                  PROJECT /{index + 1 < 10 ? "0" : ""}
                   {index + 1}
                 </span>
                 <h2 className="project__name">
