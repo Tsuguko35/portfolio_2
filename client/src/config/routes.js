@@ -1,5 +1,5 @@
 import React from "react";
-import { LandingPage, ProjectsPage } from "../pages";
+import { LandingPage, ProjectOverviewPage, ProjectsPage } from "../pages";
 
 const routes = [
   {
@@ -9,6 +9,10 @@ const routes = [
   {
     path: "/projects",
     component: <ProjectsPage />,
+  },
+  {
+    path: "/projects/:project_name",
+    component: <ProjectOverviewPage />,
   },
   {
     path: "*",
