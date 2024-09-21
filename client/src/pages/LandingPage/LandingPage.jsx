@@ -1,6 +1,5 @@
 import React from "react";
 import "../../styles/landingpage/landingpage.css";
-import HorizontalLine from "../../components/lines/HorizontalLine";
 import LandingHero from "./components/LandingHero";
 
 function LandingPage() {

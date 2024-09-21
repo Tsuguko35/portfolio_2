@@ -52,13 +52,13 @@ function ProjectOverviewPage() {
             {projectData.url && (
               <>
                 —
-                <a href={projectData.url} target="_blank">
+                <a href={projectData.url} target="_blank" rel="noreferrer">
                   Visit Site ↗
                 </a>
               </>
             )}
           </p>
-          <a href={projectData.url} target="_blank">
+          <a href={projectData.url} target="_blank" rel="noreferrer">
             <h1 className="project__title ">
               {projectData.name.split("").map((letter, letterIndex) => (
                 <HackerEffect

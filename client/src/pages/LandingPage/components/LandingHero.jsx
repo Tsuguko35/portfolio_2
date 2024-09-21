@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { HackerEffect } from "../../../components";
 
 function Landing__Hero() {
@@ -7,12 +7,15 @@ function Landing__Hero() {
   const label__1 = "Fullstack Developer";
   const label__2 = "based in philippines";
 
-  const videos = [
-    "https://res.cloudinary.com/dkwgg59ur/video/upload/v1726299160/Portfolio_Files/Official_Files/Videos/jzorystjaomj8beuclrg.webm",
-    "https://res.cloudinary.com/dkwgg59ur/video/upload/v1726299161/Portfolio_Files/Official_Files/Videos/gr2uzqebykjumh1mlqda.webm",
-    "https://res.cloudinary.com/dkwgg59ur/video/upload/v1726299160/Portfolio_Files/Official_Files/Videos/tsiutokfsjsq9wrqe6h5.webm",
-    "https://res.cloudinary.com/dkwgg59ur/video/upload/v1726299161/Portfolio_Files/Official_Files/Videos/b9i44jj65uoe3i7vd2ar.webm",
-  ];
+  const videos = useMemo(
+    () => [
+      "https://res.cloudinary.com/dkwgg59ur/video/upload/v1726299160/Portfolio_Files/Official_Files/Videos/jzorystjaomj8beuclrg.webm",
+      "https://res.cloudinary.com/dkwgg59ur/video/upload/v1726299161/Portfolio_Files/Official_Files/Videos/gr2uzqebykjumh1mlqda.webm",
+      "https://res.cloudinary.com/dkwgg59ur/video/upload/v1726299160/Portfolio_Files/Official_Files/Videos/tsiutokfsjsq9wrqe6h5.webm",
+      "https://res.cloudinary.com/dkwgg59ur/video/upload/v1726299161/Portfolio_Files/Official_Files/Videos/b9i44jj65uoe3i7vd2ar.webm",
+    ],
+    []
+  );
 
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [nextVideoIndex, setNextVideoIndex] = useState(1);
@@ -46,7 +49,7 @@ function Landing__Hero() {
       videoRefNext.current.src = videos[nextVideoIndex];
       videoRefNext.current.load();
     }
-  }, [currentVideoIndex, nextVideoIndex]);
+  }, [currentVideoIndex, nextVideoIndex, videos]);
 
   return (
     <>
@@ -131,20 +134,29 @@ function Landing__Hero() {
             </div>
           </div>
           <div className="landing__page__socials">
-            <a className="PPNeueMontreal light__on" href="/">
+            <a
+              className="PPNeueMontreal light__on"
+              href="https://www.facebook.com/tsuguko34"
+              target="_blank"
+              rel="noreferrer"
+            >
               Facebook
             </a>
             <a
               className="PPNeueMontreal light__on"
               style={{ animationDelay: "0.6s" }}
-              href="/"
+              href="https://www.linkedin.com/in/jazphercarpio/"
+              target="_blank"
+              rel="noreferrer"
             >
               LinkedIn
             </a>
             <a
               className="PPNeueMontreal light__on"
               style={{ animationDelay: "1.2s" }}
-              href="/"
+              href="https://github.com/Tsuguko35"
+              target="_blank"
+              rel="noreferrer"
             >
               Github
             </a>
