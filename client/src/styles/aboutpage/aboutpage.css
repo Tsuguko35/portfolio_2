@@ -1,0 +1,294 @@
+.about__page{
+    padding-inline: 20px;
+    padding-top: 10vh;
+}
+
+.about__page .about__page__profile{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.about__page .about__page__profile .about__page__profile__labels{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: flex-start;
+    margin: auto 0;
+    padding-left: 50px;
+    gap: 2rem;
+}
+
+.about__page .about__page__profile .about__page__profile__labels > span{
+    color: var(--text-color-4);
+    font-size: 0.68rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1rem;
+}
+
+.about__page .about__page__profile .about__page__profile__labels > h1{
+    color: var(--text-color-1);
+    font-size: 4rem;
+    letter-spacing: 1px;
+    font-weight: 100;
+    text-transform: uppercase;
+    line-height: 1rem;
+}
+
+.about__page .about__page__profile .about__page__profile__image{
+    position: relative;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about__page .about__page__profile .about__page__profile__image > .image{
+    position: relative;
+    width: min(100%, 500px);
+    height: min(100%, 600px);
+}
+
+.about__page .about__page__profile .about__page__profile__image > .image::after {
+    background: linear-gradient(0deg,var(--background-color-1) 2%, #fff0);
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.about__page .about__page__profile .about__page__profile__image > .image > img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(1);
+    border-radius: 5px;
+    transition: filter 0.3s ease-in-out;
+}
+
+.about__page .about__page__profile .about__page__profile__image > .image:hover > img{
+    filter: grayscale(0);
+}
+
+
+/* Summary  */
+.about__page > .about__page__details{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-bottom: 7rem;
+    margin: 0 auto;
+}
+
+.about__page > .about__page__details > .label{
+    grid-column: span 1;
+    color: var(--text-color-4);
+    text-transform: uppercase;
+    font-size: 0.6rem;
+
+}
+
+.about__page > .about__page__details > .detail{
+    grid-column: span 2;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.about__page > .about__page__details > .detail > p{
+    color: var(--text-color-4);
+    text-indent: 50px;
+    text-align: justify;
+    font-size: 1rem;
+    line-height: 1.5rem;
+
+}
+
+.about__page > .about__page__details .skills__list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.about__page > .about__page__details .skills__list > .skill{
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid var(--text-color-4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    color: var(--text-color-4);
+}
+
+.about__page > .about__page__details > .detail.column{
+    flex-direction: column;
+}
+
+.about__page > .about__page__details > .detail.column > .experience__container{
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    gap: 1rem;
+}
+
+.about__page > .about__page__details > .detail.column > .experience__container > .stepper{
+    position: relative;
+}
+
+
+.about__page > .about__page__details > .detail.column > .experience__container > .stepper > .stepper__ball{
+    position: relative;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid var(--text-color-4);
+}
+
+
+.about__page > .about__page__details > .detail.column > .experience__container:not(:last-child) > .stepper::after{
+    position: absolute;
+    top: 25px; /* Subtract a fixed amount to prevent overlap */
+    left: 50%;
+    content: '';
+    width: 1px;
+    height: calc(100% - 25px); /* Reduce height based on the circle size */
+    background-color: var(--text-color-4);
+
+}
+
+.about__page > .about__page__details > .detail.column > .experience__container > .experience__details{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-bottom: 4rem;
+}
+
+.about__page > .about__page__details > .detail.column > .experience__container > .experience__details > .experience__label{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.about__page > .about__page__details > .detail.column > .experience__container > .experience__details > .experience__label > .company__position{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.about__page > .about__page__details > .detail.column > .experience__container > .experience__details > .experience__label > .company__position > .poisition{
+    font-size: 0.68rem;
+    color: var(--text-color-4);
+    text-transform: uppercase;
+}
+
+.about__page > .about__page__details > .detail.column > .experience__container > .experience__details > .experience__label > .company__position > .company__name{
+    font-size: 1.5rem;
+    font-weight: 100;
+    color: var(--text-color-1);
+    text-transform: uppercase;
+    line-height: 1rem;
+}
+
+.about__page > .about__page__details > .detail.column > .experience__container > .experience__details > .experience__label > .duration > p{
+    color: var(--text-color-4);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.about__page > .about__page__details > .detail.column > .experience__container > .experience__details > .experience__summary{
+    text-indent: 50px;
+    color: var(--text-color-4);
+    font-size: 1rem;
+}
+
+.about__page > .about__page__details > .detail.column > .experience__container > .experience__details > .experience__tech__stack{
+    display: flex;
+    gap: 1rem;
+}
+
+.about__page > .about__page__details > .detail.column > .experience__container > .experience__details > .experience__tech__stack > p{
+    color: var(--text-color-4);
+    font-size: 0.8rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.about__page > .about__page__details > .detail.column > .experience__container > .experience__details > .experience__tech__stack > p:not(.line):hover{
+    color: var(--text-color-1);
+}
+
+@media only screen and (max-width: 1024px){
+    .about__page .about__page__profile .about__page__profile__image > .image{
+        width: min(100%, 400px);
+        height: min(100%, 500px);
+    }
+
+    .about__page .about__page__profile .about__page__profile__labels > h1{
+        font-size: 3rem;
+    }
+}
+
+@media only screen and (max-width: 1023px){
+    
+
+    .about__page > .about__page__details > .detail.column > .experience__container > .experience__details > .experience__label > .company__position > .company__name{
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .about__page .about__page__profile .about__page__profile__image > .image{
+        width: min(100%, 400px);
+        height: min(100%, 500px);
+    }
+
+    .about__page .about__page__profile .about__page__profile__labels > h1{
+        font-size: 2.5rem;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .about__page .about__page__profile{
+        grid-template-columns: 1fr;
+    }
+
+    .about__page{
+        padding-top: 15vh;
+    }
+
+    .about__page .about__page__profile .about__page__profile__labels{
+        padding-left: 0px;
+    }
+
+    .about__page .about__page__profile .about__page__profile__labels > h1{
+        font-size: 3rem;
+    }
+
+    .about__page > .about__page__details{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .about__page > .about__page__details > .label{
+        font-size: 1rem;
+        color: var(--text-color-1);
+    }
+
+    .about__page > .about__page__details > .detail.column > .experience__container > .experience__details > .experience__label{
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 374px){
+    .about__page .about__page__profile .about__page__profile__labels{
+        gap: 0.5rem;
+    }
+    .about__page .about__page__profile .about__page__profile__labels > h1{
+        font-size: 2.3rem;
+    }
+}

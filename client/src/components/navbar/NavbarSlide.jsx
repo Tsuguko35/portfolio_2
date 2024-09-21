@@ -23,11 +23,11 @@ function NavbarSlide({ isOpen }) {
     },
     {
       text: "About",
-      path: "/",
+      path: "/about",
     },
     {
       text: "Contact",
-      path: "/",
+      path: "/contact",
     },
   ];
 
@@ -91,13 +91,28 @@ function NavbarSlide({ isOpen }) {
 
             <div className="text-container">
               <div className="social__links reveal">
-                <a className="link" href="/">
+                <a
+                  className="link"
+                  href="https://www.facebook.com/tsuguko34"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <FaFacebookSquare />
                 </a>
-                <a className="link" href="/">
+                <a
+                  className="link"
+                  href="https://www.linkedin.com/in/jazphercarpio/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <FaLinkedin />
                 </a>
-                <a className="link" href="/">
+                <a
+                  className="link"
+                  href="https://github.com/Tsuguko35"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <FaGithubSquare />
                 </a>
               </div>

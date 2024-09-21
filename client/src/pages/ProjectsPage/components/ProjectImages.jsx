@@ -3,8 +3,6 @@ import React, { useEffect, useState, useRef } from "react";
 function ProjectImages({ imageSrc, index }) {
   const [yPos, setYPos] = useState(0);
   const [isDesktop, setIsDesktop] = useState(true);
-  const [prevIndex, setPrevIndex] = useState(index); // Track previous index
-  const [direction, setDirection] = useState(""); // Track animation direction (up/down)
   const targetY = useRef(0); // Reference to track the target Y position
   const currentY = useRef(0); // Reference to track the current Y position
 
@@ -56,19 +54,9 @@ function ProjectImages({ imageSrc, index }) {
     return () => cancelAnimationFrame(smoothMove); // Cleanup the animation
   }, []);
 
-  // Handle index change for transition effect
-  useEffect(() => {
-    if (index > prevIndex) {
-      setDirection("up");
-    } else if (index < prevIndex) {
-      setDirection("down");
-    }
-    setPrevIndex(index); // Update the previous index after change
-  }, [index]);
-
   return (
     <div
-      className={`project__image ${!isDesktop ? "mobile" : ""} ${direction}`}
+      className={`project__image ${!isDesktop ? "mobile" : ""}`}
       style={{ top: `${yPos - 95}px` }} // Adjust to center the image on the Y axis
     >
       <img src={imageSrc} alt={imageSrc} />
