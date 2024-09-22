@@ -152,6 +152,10 @@ input[type="number"] {
   }
 }
 
+.feature{
+  opacity: 0;
+}
+
 .light__on {
   opacity: 0;
   animation: flickerLight 1s cubic-bezier(.79,-0.01,0,1.01) forwards;

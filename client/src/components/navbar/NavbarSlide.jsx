@@ -4,6 +4,8 @@ import "../../styles/navbar/navbarslide.css";
 // Icons
 import { FaFacebookSquare, FaLinkedin, FaGithubSquare } from "react-icons/fa";
 
+import Resume from "../../assets/documents/Jazpher_CV.pdf";
+
 function NavbarSlide({ isOpen }) {
   const [isFirstRender, setIsFirstRender] = useState(true); // Track initial render
 
@@ -56,7 +58,11 @@ function NavbarSlide({ isOpen }) {
         <div className="navbar__slide__divider"></div>
         <div className="navbar__slide__bottom">
           <div className="text-container download__container">
-            <a className="download reveal" href="/">
+            <a
+              className="download reveal"
+              href={Resume}
+              download={"Jazpher_Resume.pdf"}
+            >
               Resume
             </a>
           </div>

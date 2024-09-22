@@ -3,6 +3,7 @@ import "../../styles/navbar/navbar.css";
 import logoImg from "../../assets/images/logo_transparent.png";
 import NavbarSlide from "./NavbarSlide";
 import HackerEffect from "../animations/HackerEffect";
+import Resume from "../../assets/documents/Jazpher_CV.pdf";
 
 function Navbar({ isOpen, setIsOpen, isMainVisible }) {
   const [isMini, setIsMini] = useState(false); // State to track whether the user is at the top
@@ -34,17 +35,19 @@ function Navbar({ isOpen, setIsOpen, isMainVisible }) {
       {/* Nav Text  */}
       <div className="nav__container">
         {isMainVisible && (
-          <a href="/" className="title">
-            {title.split("").map((letter, index) => (
-              <HackerEffect
-                key={index} // Ensure unique key for each letter
-                text={letter === " " ? "\u00A0" : letter} // Handle spaces
-                className={"letter_decode PPEiko"}
-                scrambleSpeed={10} // Adjust speed as needed
-                startDelay={index * 100}
-              />
-            ))}
-          </a>
+          <div className="logo__text">
+            <a href="/" className="title">
+              {title.split("").map((letter, index) => (
+                <HackerEffect
+                  key={index} // Ensure unique key for each letter
+                  text={letter === " " ? "\u00A0" : letter} // Handle spaces
+                  className={"letter_decode PPEiko"}
+                  scrambleSpeed={10} // Adjust speed as needed
+                  startDelay={index * 100}
+                />
+              ))}
+            </a>
+          </div>
         )}
 
         {/* Nav Logo  */}
@@ -62,10 +65,11 @@ function Navbar({ isOpen, setIsOpen, isMainVisible }) {
         <div className="nav__items">
           {/* Resume Download  */}
           <a
-            href="/"
+            href={Resume}
             className="download light__on"
             style={{ animationDelay: "3.1s" }}
             data-text="Resume"
+            download={"Jazpher_Resume.pdf"}
           >
             Resume
           </a>

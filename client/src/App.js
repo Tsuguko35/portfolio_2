@@ -25,6 +25,27 @@ function App() {
     };
   }, []);
 
+  // Animations
+  useEffect(() => {
+    const handleScroll = () => {
+      const triggerPoint = window.innerHeight * 0.65;
+      const features = document.querySelectorAll(".feature");
+
+      features.forEach((feature) => {
+        const featureBounding = feature.getBoundingClientRect();
+
+        if (featureBounding.top <= triggerPoint) {
+          feature.classList.add("light__on");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       {/* Preloader  */}

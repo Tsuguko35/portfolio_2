@@ -2,12 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import "../../styles/cursor/cursorfollower.css";
 
 function CursorFollower() {
-  const mouseCoords = useRef({ x: 0, y: 0 }); // Tracks actual mouse coordinates
-  const circleCoords = useRef({ x: 0, y: 0 }); // Tracks the circle's current position
   const circleRef = useRef(null);
   const [isDesktop, setIsDesktop] = useState(true); // To track if the device is desktop
-
-  const lerpFactor = 0.1; // How much to ease the circle (higher value = less smooth, lower value = more smooth)
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const circlePosRef = useRef({ x: 0, y: 0 }); // Use a ref for circle position
 
   useEffect(() => {
     // Check if the user is on a mobile device by screen width or user agent
@@ -30,42 +28,56 @@ function CursorFollower() {
     };
   }, []);
 
-  // Follow Cursor
+  // Track mouse position including scroll
   useEffect(() => {
     if (!isDesktop) return;
 
     const handleMouseMove = (e) => {
-      mouseCoords.current = {
-        x: e.clientX,
-        y: e.clientY + window.scrollY, // Account for scroll position
-      };
+      setMousePos({
+        x: e.pageX, // PageX accounts for scroll offset
+        y: e.pageY, // PageY accounts for scroll offset
+      });
     };
 
-    const animateCircles = () => {
-      if (circleRef.current) {
-        const x =
-          circleCoords.current.x +
-          (mouseCoords.current.x - circleCoords.current.x) * lerpFactor;
-        const y =
-          circleCoords.current.y +
-          (mouseCoords.current.y - circleCoords.current.y) * lerpFactor;
-
-        circleCoords.current = { x, y };
-
-        circleRef.current.style.left = x - 12 + "px";
-        circleRef.current.style.top = y - 12 + "px";
-
-        requestAnimationFrame(animateCircles);
-      }
-    };
-
-    document.addEventListener("mousemove", handleMouseMove);
-    animateCircles(); // Start the animation loop
+    window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, [isDesktop]);
+
+  // Function to animate the circle's position with lag
+  useEffect(() => {
+    if (!isDesktop) return;
+
+    let animationFrameId;
+
+    const animateCircle = () => {
+      // Calculate the lag (lerp - linear interpolation)
+      const dx = mousePos.x - circlePosRef.current.x;
+      const dy = mousePos.y - circlePosRef.current.y;
+      const lag = 0.1; // Adjust the lag value (smaller values = more lag)
+
+      // Update the circle's position
+      circlePosRef.current.x += dx * lag;
+      circlePosRef.current.y += dy * lag;
+
+      // Update the circle's position in the DOM
+      if (circleRef.current) {
+        circleRef.current.style.left = `${circlePosRef.current.x - 12}px`; // Center circle
+        circleRef.current.style.top = `${circlePosRef.current.y - 12}px`; // Center circle
+      }
+
+      // Request the next animation frame
+      animationFrameId = requestAnimationFrame(animateCircle);
+    };
+
+    animateCircle(); // Start animation
+
+    return () => {
+      cancelAnimationFrame(animationFrameId); // Cleanup on unmount
+    };
+  }, [mousePos, isDesktop]); // Remove circlePos dependency
 
   // Hover Effect
   useEffect(() => {
