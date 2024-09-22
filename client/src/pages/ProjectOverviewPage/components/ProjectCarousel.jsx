@@ -27,10 +27,10 @@ function ProjectCarousel({ images, project }) {
         spaceBetween={20}
         pagination={true}
         autoplay={{
-          delay: 0, // No delay between transitions
+          delay: 1000, // No delay between transitions
           disableOnInteraction: false,
         }}
-        speed={5000}
+        speed={2000}
         modules={[Autoplay]}
         className="mySwiper"
       >

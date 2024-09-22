@@ -19,6 +19,7 @@
   font-family: "Chivo", sans-serif;
   scrollbar-width: none;
   scrollbar-color: var(--background-color-3) var(--background-color-2);
+
 }
 
 ::selection{

@@ -100,11 +100,16 @@ function ContactPage() {
                 ))}
               </h2>
             </div>
-            <span className="label PPNeueMontreal">Based in Philippines</span>
+            <span
+              className="label PPNeueMontreal light__on"
+              style={{ animationDelay: "0.7s" }}
+            >
+              Based in Philippines
+            </span>
             <div className="local__time">
               <span
                 className="local__time__label light__on"
-                style={{ animationDelay: "1.1s" }}
+                style={{ animationDelay: "1s" }}
               >
                 Local TIme ►
               </span>
@@ -113,7 +118,7 @@ function ContactPage() {
             <div className="local__time">
               <span
                 className="local__time__label light__on"
-                style={{ animationDelay: "1.4s" }}
+                style={{ animationDelay: "1.2s" }}
               >
                 Email ►
               </span>
@@ -132,7 +137,7 @@ function ContactPage() {
             <div className="local__time">
               <span
                 className="local__time__label light__on"
-                style={{ animationDelay: "1.7s" }}
+                style={{ animationDelay: "1.4s" }}
               >
                 Contact Number ►
               </span>

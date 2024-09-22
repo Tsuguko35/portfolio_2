@@ -5,6 +5,7 @@ import "../../styles/navbar/navbarslide.css";
 import { FaFacebookSquare, FaLinkedin, FaGithubSquare } from "react-icons/fa";
 
 import Resume from "../../assets/documents/Jazpher_CV.pdf";
+import DelayedLink from "../animations/DelayedLink";
 
 function NavbarSlide({ isOpen }) {
   const [isFirstRender, setIsFirstRender] = useState(true); // Track initial render
@@ -44,13 +45,13 @@ function NavbarSlide({ isOpen }) {
           <ul className="navbar__slide__list">
             {nav__list.map((item, index) => (
               <li key={index}>
-                <a
+                <DelayedLink
                   className="PPEiko reveal"
-                  href={item.path}
+                  to={item.path}
                   data-text={item.text}
                 >
                   {item.text}
-                </a>
+                </DelayedLink>
               </li>
             ))}
           </ul>

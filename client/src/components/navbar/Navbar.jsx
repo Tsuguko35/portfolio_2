@@ -4,10 +4,17 @@ import logoImg from "../../assets/images/logo_transparent.png";
 import NavbarSlide from "./NavbarSlide";
 import HackerEffect from "../animations/HackerEffect";
 import Resume from "../../assets/documents/Jazpher_CV.pdf";
+import { useLocation } from "react-router-dom";
+import DelayedLink from "../animations/DelayedLink";
 
 function Navbar({ isOpen, setIsOpen, isMainVisible }) {
+  const location = useLocation();
   const [isMini, setIsMini] = useState(false); // State to track whether the user is at the top
   const title = "— jazpher carpio";
+
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
+  }, [isOpen]);
 
   // Effect to check scroll position
   useEffect(() => {
@@ -28,6 +35,10 @@ function Navbar({ isOpen, setIsOpen, isMainVisible }) {
     };
   }, []);
 
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
+
   return (
     <header
       className={`navbar ${isOpen ? "open" : ""} ${isMini ? "mini" : ""}`}
@@ -36,7 +47,7 @@ function Navbar({ isOpen, setIsOpen, isMainVisible }) {
       <div className="nav__container">
         {isMainVisible && (
           <div className="logo__text">
-            <a href="/" className="title">
+            <DelayedLink to={"/"} className="title">
               {title.split("").map((letter, index) => (
                 <HackerEffect
                   key={index} // Ensure unique key for each letter
@@ -46,19 +57,19 @@ function Navbar({ isOpen, setIsOpen, isMainVisible }) {
                   startDelay={index * 100}
                 />
               ))}
-            </a>
+            </DelayedLink>
           </div>
         )}
 
         {/* Nav Logo  */}
         <div className="logo__container">
-          <a
-            href="/"
+          <DelayedLink
+            to={"/"}
             className="logo light__on"
             style={{ animationDelay: "3s" }}
           >
             <img src={logoImg} alt="logoIMG" draggable={false} />
-          </a>
+          </DelayedLink>
         </div>
 
         {/* Nav Items  */}

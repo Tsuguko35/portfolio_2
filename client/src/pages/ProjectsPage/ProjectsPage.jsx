@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../../styles/projectspage/projectspage.css";
 import projects_array from "./components/projects";
-import { HackerEffect, HorizontalLine } from "../../components";
+import { DelayedLink, HackerEffect, HorizontalLine } from "../../components";
 import ProjectImages from "./components/ProjectImages";
 
 function ProjectsPage() {
@@ -18,8 +18,8 @@ function ProjectsPage() {
         {projects_array.map((project, index) => (
           <>
             <li onMouseEnter={() => projectHover(project.thumbnail, index)}>
-              <a
-                href={`/projects/${project.url_name}`}
+              <DelayedLink
+                to={`/projects/${project.url_name}`}
                 title={`Explore ${project.name}`}
                 data-text={project.name}
               >
@@ -41,7 +41,7 @@ function ProjectsPage() {
                   </p>
                   <span className="arrow">→</span>
                 </h2>
-              </a>
+              </DelayedLink>
             </li>
             {projects_array.length !== index + 1 && <HorizontalLine />}
           </>

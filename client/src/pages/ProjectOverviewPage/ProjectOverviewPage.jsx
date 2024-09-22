@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "../../styles/projectoverviewpage/projectoverviewpage.css";
-import { HackerEffect, HorizontalLine, MiniFooter } from "../../components";
+import {
+  DelayedLink,
+  HackerEffect,
+  HorizontalLine,
+  MiniFooter,
+} from "../../components";
 import projects_array from "../ProjectsPage/components/projects";
 import ProjectCarousel from "./components/ProjectCarousel";
 
@@ -30,13 +35,13 @@ function ProjectOverviewPage() {
   return (
     <section className="project__overview__page">
       <div className="wrapper">
-        <a
+        <DelayedLink
           className="back__button light_on"
           style={{ animationDelay: "1s" }}
-          href="/projects"
+          to={"/projects"}
         >
           ← Back to Projects
-        </a>
+        </DelayedLink>
       </div>
       {/* Project Carousel */}
       <ProjectCarousel images={projectData.images} project={project_name} />

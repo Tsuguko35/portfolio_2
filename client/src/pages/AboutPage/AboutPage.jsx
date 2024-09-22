@@ -9,7 +9,7 @@ function AboutPage() {
       {/* Profile  */}
       <section className="about__page__profile">
         <div className="about__page__profile__labels">
-          <span className="light__on" style={{ animationDelay: "1.2s" }}>
+          <span className="light__on" style={{ animationDelay: "1s" }}>
             Hello, I'm
           </span>
           <h1 className="name cursor__interact">
@@ -25,7 +25,7 @@ function AboutPage() {
           </h1>
         </div>
         <div className="about__page__profile__image">
-          <div className="image light__on" style={{ animationDelay: "1.5s" }}>
+          <div className="image light__on" style={{ animationDelay: "1.2s" }}>
             <img src={about_details.profile_image} alt="profile" />
           </div>
         </div>
