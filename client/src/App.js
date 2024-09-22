@@ -2,12 +2,21 @@ import "./styles/styles.css";
 import "./styles/fontface.css";
 import { Routes, Route } from "react-router-dom";
 import { routes } from "./config";
-import { CursorFollower, Navbar, Preloader, Scrollbar } from "./components";
+import {
+  CursorFollower,
+  Navbar,
+  Preloader,
+  RouteTransition,
+  Scrollbar,
+} from "./components";
 import { useEffect, useState } from "react";
+import { ProjectContext } from "./context";
 
 function App() {
   const [isMainVisible, setIsMainVisible] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [linkTransitionOpen, setLinkTransitionOpen] = useState(false);
+
   useEffect(() => {
     document.body.style.overflow = "hidden";
 
@@ -47,12 +56,17 @@ function App() {
   }, []);
 
   return (
-    <>
+    <ProjectContext.Provider
+      value={{ linkTransitionOpen, setLinkTransitionOpen, setIsOpen }}
+    >
+      {/* Route Transition  */}
+      <RouteTransition />
+
       {/* Preloader  */}
       <Preloader />
 
       {/* Scrollbar */}
-      {isMainVisible && <CursorFollower />}
+      {/* {isMainVisible && <CursorFollower />} */}
 
       {/* Navbar  */}
       <Navbar
@@ -79,7 +93,7 @@ function App() {
           </Routes>
         </main>
       )}
-    </>
+    </ProjectContext.Provider>
   );
 }
 

@@ -71,7 +71,7 @@ const projects_array = [
     description:
       "GoEdenHome is an innovative platform dedicated to creating sustainable and eco-friendly living spaces. Focused on promoting green building practices and environmentally conscious home solutions, GoEdenHome offers a range of services and products designed to enhance the quality of life while reducing environmental impact. The platform provides homeowners and builders with access to sustainable materials, energy-efficient technologies, and expert advice on eco-friendly home improvements. By fostering a community of environmentally aware individuals, GoEdenHome is committed to making sustainable living accessible and achievable for everyone, contributing to a healthier planet and a better future.",
     url: "https://www.goedenhome.com/",
-    images: [eden1, eden2, eden3, eden4, eden5, eden6],
+    images: [eden1, eden2, eden3, eden4, eden5, eden6, eden5],
     tech_stack: ["React.JS"],
   },
   {
@@ -93,7 +93,7 @@ const projects_array = [
     description:
       "Ark Web Services specializes in crafting custom websites tailored to meet the unique needs of businesses. Their expert team is dedicated to providing top-notch web design and development services that help clients establish a strong online presence. From sleek, modern designs to robust functionality, they ensure each website not only looks great but performs seamlessly. Whether for startups or established businesses, Ark Web Services brings visions to life and helps clients succeed in the digital world. Discover the difference with Ark Web Services and build something amazing.",
     url: "https://ark-web-solutions-development.vercel.app/",
-    images: [ark1, ark2, ark3, ark4, ark5],
+    images: [ark1, ark2, ark3, ark4, ark5, ark2, ark3],
     tech_stack: ["React.JS"],
   },
 ];
