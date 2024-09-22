@@ -12,7 +12,7 @@ function AboutPage() {
           <span className="light__on" style={{ animationDelay: "1.2s" }}>
             Hello, I'm
           </span>
-          <h1 className="name">
+          <h1 className="name cursor__interact">
             {about_details.name.split("").map((letter, index) => (
               <HackerEffect
                 key={index} // Ensure unique key for each letter
@@ -32,7 +32,7 @@ function AboutPage() {
       </section>
 
       {/* Summary  */}
-      <section className="about__page__details">
+      <section className="about__page__details feature">
         <span className="label">About&nbsp;&nbsp;▶</span>
         <div className="detail">
           <p className="summary">{about_details.summary}</p>
@@ -40,7 +40,7 @@ function AboutPage() {
       </section>
 
       {/* Skills  */}
-      <section className="about__page__details">
+      <section className="about__page__details feature">
         <span className="label">Skills&nbsp;&nbsp;▶</span>
         <div className="detail">
           <ul className="skills__list">
@@ -55,7 +55,7 @@ function AboutPage() {
       </section>
 
       {/* Experience  */}
-      <section className="about__page__details">
+      <section className="about__page__details feature">
         <span className="label">Experience&nbsp;&nbsp;▶</span>
         <div className="detail column">
           {about_details.experience.map((experience, index) => (
@@ -95,7 +95,7 @@ function AboutPage() {
       </section>
 
       {/* Education  */}
-      <section className="about__page__details">
+      <section className="about__page__details feature">
         <span className="label">Education&nbsp;&nbsp;▶</span>
         <div className="detail column">
           {about_details.education.map((education, index) => (

@@ -121,6 +121,13 @@
     align-items: center;
     gap: 5px;
     color: var(--text-color-4);
+    cursor: default;
+    transition: all 0.3s ease-in-out;
+}
+
+.about__page > .about__page__details .skills__list > .skill:hover{
+    color: var(--background-color-1);
+    background-color: var(--text-color-1);
 }
 
 .about__page > .about__page__details > .detail.column{

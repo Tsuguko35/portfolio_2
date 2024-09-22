@@ -5,6 +5,7 @@ import Scrollbar from "./scrollbar/Scrollbar";
 import CursorFollower from "./cursor/CursorFollower";
 import HorizontalLine from "./lines/HorizontalLine";
 import MiniFooter from "./footers/MiniFooter";
+import PixelateCanvas from "./animations/PixelateCanvas";
 
 export {
   Navbar,
@@ -14,4 +15,5 @@ export {
   CursorFollower,
   HorizontalLine,
   MiniFooter,
+  PixelateCanvas,
 };

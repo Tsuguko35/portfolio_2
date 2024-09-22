@@ -1,15 +1,14 @@
 .navbar {
-    width: 100%;
+    width: 100dvw;
     height: fit-content;
     position: fixed;
     z-index: 500;
     transition: background-color 0.3s ease-in-out;
-    overflow: hidden;
 }
   
 .navbar.mini {
     background-color: rgba(27, 27, 27, 0.7);
-    backdrop-filter: blur(5px);
+    
 }
 
 .navbar:not(.mini){
@@ -25,8 +24,9 @@
     transition: padding 0.3s ease-in-out;
 }
 
-.navbar.mini > .nav__container{
+.navbar:not(.open).mini > .nav__container{
     padding: 20px 20px;
+    backdrop-filter: blur(7px);
 }
 
 .navbar:not(.mini) > .nav__container{
@@ -34,13 +34,20 @@
 }
 
 /* Nav TItle  */
-.navbar > .nav__container > .title {
+.navbar > .nav__container > .logo__text {
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
 
-.navbar > .nav__container > .title > span{
+.navbar > .nav__container > .logo__text > .title {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.navbar > .nav__container > .logo__text > .title > span{
     color: var(--text-color-2);
     text-transform: uppercase;
     font-weight: 300;
@@ -88,7 +95,7 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    z-index: 501;
+    z-index: 502;
 }
 
 .navbar > .nav__container > .nav__items > .hamburger__button > span{
@@ -126,7 +133,7 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .navbar > .nav__container > .title {
+    .navbar > .nav__container > .logo__text {
         display: none;
     }
 
