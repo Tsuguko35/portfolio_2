@@ -13,6 +13,7 @@
   overflow: hidden;
 }
 
+
 .landing__page .landing__page__hero__background::after {
   content: "";
   position: absolute;
