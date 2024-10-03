@@ -66,7 +66,7 @@ function App() {
       <Preloader />
 
       {/* Scrollbar */}
-      {/* {isMainVisible && <CursorFollower />} */}
+      {isMainVisible && <CursorFollower />}
 
       {/* Navbar  */}
       <Navbar
