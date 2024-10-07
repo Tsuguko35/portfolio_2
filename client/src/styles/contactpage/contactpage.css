@@ -186,7 +186,18 @@
     }
   } 
 
+@media only screen and (max-width: 1536px){
+    .contact__page{
+        padding-inline: 100px;
+    }
+    
+}
+
 @media only screen and (max-width: 1024px){
+    .contact__page{
+        padding-inline: 20px;
+    }
+    
     .contact__page .contact__container{
         padding: 3rem 5rem;
     }

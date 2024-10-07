@@ -125,6 +125,25 @@
     transform: translateY(0px) rotate(-45deg);
 }
 
+@media only screen and (max-width: 1536px){
+    .navbar > .nav__container{
+        padding: 40px 100px;
+    }
+
+    .navbar:not(.open).mini > .nav__container{
+        padding: 20px 100px;
+    }
+}
+
+@media only screen and (max-width: 1024px){
+    .navbar > .nav__container{
+        padding: 40px 20px;
+    }
+    
+    .navbar:not(.open).mini > .nav__container{
+        padding: 20px 20px;
+    }
+}
 
 
 @media only screen and (max-width: 767px){

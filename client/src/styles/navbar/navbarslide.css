@@ -209,7 +209,18 @@
     display: none;
 }
 
+@media only screen and (max-width: 1536px){
+    .navbar__slide .navbar__slide__container{
+        padding: 60px 20px;
+    }
+}
+
+
 @media only screen and (max-width: 1024px){
+    .navbar__slide .navbar__slide__container{
+        padding: 100px 20px;
+    }
+
     .navbar__slide .navbar__slide__container > .navbar__slide__bottom{
         grid-template-columns: 1fr;
         gap: 3rem;

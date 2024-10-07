@@ -79,7 +79,17 @@
     letter-spacing: 1px;
 }
 
+@media only screen and (max-width: 1536px){
+    .project__overview__page .wrapper{
+        padding-inline: 100px;
+    }
+}
+
 @media only screen and (max-width: 1024px){
+    .project__overview__page .wrapper{
+        padding-inline: 20px;
+    }
+
     .project__overview__page .project__label{
         padding: 10px 0px;
         gap: 1.5rem;
