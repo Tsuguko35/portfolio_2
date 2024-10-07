@@ -90,7 +90,17 @@
     transform: scale(1);
 }
 
+@media only screen and (max-width: 1536px){
+    .projects__page{
+        padding-inline: 100px;
+    }
+}
+
 @media only screen and (max-width: 1024px){
+    .projects__page{
+        padding-inline: 20px;
+    }
+
     .projects__page > .projects__list > li > a > .project__name > .name{
         font-size: 1.7rem;
     }

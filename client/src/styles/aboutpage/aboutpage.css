@@ -228,7 +228,17 @@
     color: var(--text-color-1);
 }
 
+@media only screen and (max-width: 1536px){
+    .about__page{
+        padding-inline: 100px;
+    }
+}
+
 @media only screen and (max-width: 1024px){
+    .about__page{
+        padding-inline: 20px;
+    }
+
     .about__page .about__page__profile .about__page__profile__image > .image{
         width: min(100%, 400px);
         height: min(100%, 500px);
